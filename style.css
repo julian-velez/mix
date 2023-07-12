@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 230px;
+}
+
+.container {
+    position: relative; /* Establece la posición relativa para que los elementos internos se posicionen correctamente */
+    width: 800px; /* Ancho del contenedor */
+    height: 600px; /* Altura del contenedor */
+    perspective: 1000px; /* Establece la perspectiva 3D para la animación */
+  }
+  
+  .container img {
+    width: 100%; /* Ancho de la imagen de fondo */
+    height: 100%; /* Altura de la imagen de fondo */
+    object-fit: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+  }
+  
+  .overlay {
+    position: absolute; /* Establece la posición absoluta para superponerse a la imagen de fondo */
+    top: 0; /* Distancia desde la parte superior */
+    left: 0; /* Distancia desde la izquierda */
+    width: 100%; /* Ancho del elemento de superposición */
+    height: 100%; /* Altura del elemento de superposición */
+    background-color: #ff0000; /* Color de fondo rojo */
+    mix-blend-mode: multiply; /* Establece el modo de mezcla de fondo a multiplicar */
+    opacity: 0.6; /* Opacidad del elemento de superposición */
+  }
+  
+  .animated-text {
+    position: absolute; /* Establece la posición absoluta para el texto animado */
+    top: 50%; /* Distancia desde la parte superior */
+    left: 50%; /* Distancia desde la izquierda */
+    transform: translate(-50%, -50%); /* Centra el texto horizontal y verticalmente */
+    color: #ffffff; /* Color del texto */
+    font-size: 36px; /* Tamaño de fuente del texto */
+    text-align: center; /* Alineación del texto en el centro */
+    mix-blend-mode: screen; /* Establece el modo de mezcla de fondo del texto a pantalla */
+    animation: rotateAnimation 10s infinite linear; /* Aplica la animación llamada rotateAnimation */
+  }
+  
+  @keyframes rotateAnimation {
+    0% { transform: translate(-50%, -50%) rotateX(0) rotateY(0); } /* Estado inicial de la animación */
+    100% { transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg); } /* Estado final de la animación */
+  }
+  
+  
